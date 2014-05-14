@@ -13,11 +13,14 @@ Then you need to create a `~/.ss-to-s3.config` file with something like this:
 	"ACCESS_KEY_ID":     "MY-ACCESS-KEY",
 	"ACCESS_KEY_SECRET": "MY-KEY-SECRET",
 	"BUCKET":            "THE-BUCKET",
-	"COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})"
+	"COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})",
+	"PREVIEW_BEFORE_UPLOAD": true
 }
 ~~~
 
 ACCESS KEY, SECRET and BUCKET are the Amazon S3 parameters, COPY_FORMAT is a mask of what is going to by write to your clipboard after finished.
+
+PREVIEW_BEFORE_UPLOAD (defaults to false) shows OSx preview application before uploading, this allows you to draw arrows and rectangles.
 
 ## Usage
 
@@ -37,6 +40,6 @@ Next you will asign a key shortcut to the service, in System Preferences as show
 
 You are done! close Automator and System Preferences before testing.
 
-## License 
+## License
 
 MIT - 2013 - José F. Romaniello
