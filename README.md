@@ -14,7 +14,8 @@ Then you need to create a `~/.ss-to-s3.config` file with something like this:
 	"ACCESS_KEY_SECRET": "MY-KEY-SECRET",
 	"BUCKET":            "THE-BUCKET",
 	"COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})",
-	"PREVIEW_BEFORE_UPLOAD": true
+	"PREVIEW_BEFORE_UPLOAD": true,
+	"DIRECTORY":         "screenshots" //optional base key for the objets in s3.
 }
 ~~~
 
