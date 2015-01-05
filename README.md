@@ -4,11 +4,19 @@ Capture Screenshot and send it to Amazon S3.
 
 ## Install
 
-Install with npm as follows:
+Install with **npm** as follows:
 
 ~~~
 npm i -g s2s3
 ~~~
+
+Install with **brew** as follows:
+
+~~~
+brew tap jfromaniello/brew
+brew install s2s3
+~~~
+
 
 Then you need to create a `~/.s2s3.config` file with something like this:
 
