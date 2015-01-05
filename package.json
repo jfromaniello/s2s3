@@ -1,6 +1,6 @@
 {
   "name": "ss-to-s3",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Screenshot to S3",
   "scripts": {},
   "repository": {
