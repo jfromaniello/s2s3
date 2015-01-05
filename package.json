@@ -1,11 +1,11 @@
 {
-  "name": "ss-to-s3",
+  "name": "s2s3",
   "version": "1.2.0",
   "description": "Screenshot to S3",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:jfromaniello/ss-to-s3.git"
+    "url": "git@github.com:jfromaniello/s2s3.git"
   },
   "keywords": [
     "screenshot",

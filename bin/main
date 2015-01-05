@@ -9,7 +9,7 @@ var AWS     = require('aws-sdk');
 var moment = require('moment');
 
 var config;
-var config_file = process.argv[2] || path.join(process.env.HOME, '/.ss-to-s3.config');
+var config_file = process.argv[2] || path.join(process.env.HOME, '/.s2s3.config');
 
 if (~['--version', '-V'].indexOf(process.argv[2])) {
   console.log('v' + require('../package').version);

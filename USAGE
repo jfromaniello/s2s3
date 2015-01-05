@@ -1,7 +1,7 @@
 
-usage: ss-to-s3 [file]
+usage: s2s3 [file]
 
-The file parameter defaults to ~/.ss-to-s3.config.
+The file parameter defaults to ~/.s2s3.config.
 
 The configuration file format is JSON.
 
