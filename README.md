@@ -4,6 +4,12 @@ Capture Screenshot and send it to Amazon S3.
 
 ## Install
 
+Install with npm as follows:
+
+~~~
+npm i -g s2s3
+~~~
+
 Then you need to create a `~/.s2s3.config` file with something like this:
 
 ~~~javascript
@@ -23,21 +29,17 @@ PREVIEW_BEFORE_UPLOAD (defaults to false) shows OSx preview application before u
 
 ## Usage
 
-Run `s2s3` from the terminal or create a service with Automator and assign a shortcut as described in the next section.
+From terminal:
 
+~~~
+$ s2s3
+~~~
 
-## Create a shortcut
+Grab the area of the screen you want to capture and you will get a link copied to your clipboard.
 
-First you will need to create a __SERVICE__ with automator. Select "run shell script" in Actions and then write `/usr/local/bin/s2s3` as shown here:
+Create a global key shortcut to `/usr/local/bin/s2s3` as described here:
 
-![ss-2013-06-04T09-44-23.png](http://blog.auth0.com.s3.amazonaws.com/ss-2013-06-04T09-44-23.png)
-
-Next you will asign a key shortcut to the service, in System Preferences as shown here:
-
-![ss-2013-06-04T09-27-26.png](http://blog.auth0.com.s3.amazonaws.com/ss-2013-06-04T09-27-26.png)
-
-
-You are done! close Automator and System Preferences before testing.
+[apple.stackexchange.com: Create global shortcut to run command line applications](http://apple.stackexchange.com/questions/24063/create-global-shortcut-to-run-command-line-applications)
 
 ## License
 
