@@ -9,25 +9,32 @@ var AWS     = require('aws-sdk');
 var moment = require('moment');
 
 var config;
-
 var config_file = process.argv[2] || path.join(process.env.HOME, '/.ss-to-s3.config');
 
-//load configuration
+if (~['--version', '-V'].indexOf(process.argv[2])) {
+  console.log('v' + require('../package').version);
+  return process.exit(0);
+}
+
+if (~['--license', '-l'].indexOf(process.argv[2])) {
+  console.log('Screenshot to S3  v' + require('../package').version);
+  console.log(fs.readFileSync(__dirname + '/../LICENSE', 'utf8') + '\n\n');
+  return process.exit(0);
+}
+
+if (~['--help', '-H'].indexOf(process.argv[2]) || !fs.existsSync(config_file)) {
+  console.log('Screenshot to S3 v' + require('../package').version);
+  console.log(fs.readFileSync(__dirname + '/../USAGE', 'utf8') + '\n\n');
+  return process.exit(0);
+}
+
+
 try{
   config = JSON.parse(fs.readFileSync(config_file).toString());
 } catch(er) {
-  console.log(er);
-  console.log('Mising ~/.ss-to-s3.config');
-  var example = {
-    "ACCESS_KEY_ID":     "MY-ACCESS-KEY",
-    "ACCESS_KEY_SECRET": "MY-KEY-SECRET",
-    "BUCKET":            "THE-BUCKET",
-    "COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})"
-  };
-  console.log('example: \n ', JSON.stringify(example));
+  console.log('invalid configuration file');
   return process.exit(1);
 }
-//------------------
 
 
 AWS.config.update({
@@ -66,4 +73,5 @@ exec('screencapture -i ' + fullpath)
   })
   .then(null, function (err) {
     console.log(err);
+    return process.exit(1);
   });

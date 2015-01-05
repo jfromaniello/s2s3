@@ -1,0 +1,19 @@
+
+usage: ss-to-s3 [file]
+
+The file parameter defaults to ~/.ss-to-s3.config.
+
+The configuration file format is JSON.
+
+Example configuration:
+
+{
+  "ACCESS_KEY_ID":     "MY-ACCESS-KEY",
+  "ACCESS_KEY_SECRET": "MY-KEY-SECRET",
+  "BUCKET":            "THE-BUCKET",
+  "COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})",
+  "DIRECTORY":         "my-screenshots/"
+  "PREVIEW_BEFORE_UPLOAD": true
+}
+
+Required settings: ACCESS_KEY_ID, ACCESS_KEY_SECRET, BUCKET.
