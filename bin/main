@@ -10,9 +10,11 @@ var moment = require('moment');
 
 var config;
 
+var config_file = process.argv[2] || path.join(process.env.HOME, '/.ss-to-s3.config');
+
 //load configuration
 try{
-  config = JSON.parse(fs.readFileSync(path.join(process.env.HOME, '/.ss-to-s3.config')).toString());
+  config = JSON.parse(fs.readFileSync(config_file).toString());
 } catch(er) {
   console.log(er);
   console.log('Mising ~/.ss-to-s3.config');
@@ -46,7 +48,7 @@ exec('screencapture -i ' + fullpath)
     }
   })
   .then(function () {
-    var key = file;
+    var key = config.DIRECTORY ? path.join(config.DIRECTORY, file) : file;
     var result = config.COPY_FORMAT.replace(/\{filekey\}/ig, key);
     return exec('echo "' + result  + '" | pbcopy')
           .thenResolve([fullpath, key]);
