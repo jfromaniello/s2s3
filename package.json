@@ -20,7 +20,7 @@
   "author": "José F. Romaniello <jfromaniello@gmail.com> (http://joseoncode.com)",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "~1.2.0",
+    "aws-sdk": "~2.1.42",
     "moment": "~2.0.0",
     "q": "~0.9.4"
   }
