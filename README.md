@@ -24,6 +24,7 @@ Then you need to create a `~/.s2s3.config` file with something like this:
 {
 	"ACCESS_KEY_ID":     "MY-ACCESS-KEY",
 	"ACCESS_KEY_SECRET": "MY-KEY-SECRET",
+	"REGION":            "MY-REGION", // e.g. eu-central-1
 	"BUCKET":            "THE-BUCKET",
 	"COPY_FORMAT":       "![{filekey}](http://THE-BUCKET.amazonaws.com/{filekey})",
 	"PREVIEW_BEFORE_UPLOAD": true,
@@ -31,7 +32,7 @@ Then you need to create a `~/.s2s3.config` file with something like this:
 }
 ~~~
 
-ACCESS KEY, SECRET and BUCKET are the Amazon S3 parameters, COPY_FORMAT is a mask of what is going to by write to your clipboard after finished.
+ACCESS KEY, SECRET, REGION and BUCKET are the Amazon S3 parameters, COPY_FORMAT is a mask of what is going to by write to your clipboard after finished.
 
 PREVIEW_BEFORE_UPLOAD (defaults to false) shows OSx preview application before uploading, this allows you to draw arrows and rectangles.
 
