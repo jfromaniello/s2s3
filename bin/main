@@ -39,7 +39,8 @@ try{
 
 AWS.config.update({
   accessKeyId: config.ACCESS_KEY_ID,
-  secretAccessKey: config.ACCESS_KEY_SECRET
+  secretAccessKey: config.ACCESS_KEY_SECRET,
+  signatureVersion: 'v4'
 });
 
 var s3 = new AWS.S3({params: { Bucket:  config.BUCKET}});
